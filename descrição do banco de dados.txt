@@ -1,0 +1,20 @@
+site Maiara Esteticista
+
+cadastro de procedimentos
+
+- id: int
+- tipo: varchar
+- titulo: varchar
+- descricao: longtext
+- imagem: varchar 
+
+estagio
+junho = 17 dias uteis 
+julho = 21 dias uteis
+
+38 dias úteis
+
+agosto = 23 dias úteis
+
+dia 16 = 50 horas hora sconcluídas
+

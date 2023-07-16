@@ -1,0 +1,9 @@
+site Maiara Esteticista
+
+cadastro de procedimentos
+
+- tipo
+- tipo: varchar
+- titulo: varchar
+- descricao: longtext
+- imagem: varchar 

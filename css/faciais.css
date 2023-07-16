@@ -1,0 +1,103 @@
+.main-title{
+    margin-top: 10%;
+}
+
+.main-title::before{
+
+    top: 80%;
+}
+
+.container {
+
+    margin-top: -5%;
+
+}
+
+.container-fluid {
+
+    margin-top: 5%;
+}
+
+.title-1 {
+
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+.title-clear{
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+.title-diamante {
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.clear {
+     font-size: 18px;
+     text-align: justify;
+     margin-left: 10%;
+     font-weight: normal;
+
+}
+
+.diamante {
+    font-size: 18px;
+     text-align: justify;
+     
+     margin-right: 10%;
+}
+
+.col-md-3 {
+
+    margin-top:
+}
+
+#clear {
+    margin-left: 20%;
+    width: 65%;
+}
+
+#diamante {
+    margin-left: -2%;
+}
+
+img {
+
+    
+}
+
+#diamanteimg {
+    
+    width: 60%;
+    margin-right: 20%;
+    
+}
+
+
+#limpesa {
+    margin-left: 15%;
+    width: 65%;
+}
+
+#micro {
+    width: 60%;
+    margin-left: 15%;
+    
+}
+
+#spa {
+    width: 53%;
+    margin-left: 15%;
+}
