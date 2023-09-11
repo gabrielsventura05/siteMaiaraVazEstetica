@@ -1,0 +1,75 @@
+
+body{
+
+    background-image: url(../img/maiara_estetica/ambiente/ambiente12.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+#login {
+
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding-bottom:2%;
+    background-color: rgba(22, 145, 216, 0.7);
+    justify-content: center;
+    border: 10px; 
+    border-radius: 10px;
+     margin: auto;
+      
+      width: 50%;
+}
+
+form > #title {
+
+    padding-top: 8%; text-align: center;
+}
+
+form > #input1 {
+    padding-top: 5%; 
+    width: 78%; 
+    margin-left: 11%;
+   
+}
+
+
+
+form > #input1 {
+    padding-top: 5%; 
+    width: 78%; 
+    margin-left: 11%;
+   
+}
+
+form > #input2, #input3 {
+    
+    width: 78%; 
+    margin-left: 11%;
+}
+
+form > #file {
+    margin-left: 11%;
+     width: 78%; 
+    
+}
+
+form .form-group > label {
+    color: aliceblue;
+}
+
+#botao{
+
+    display: flex; 
+    justify-content: center; 
+    
+    margin-top: 8%;
+}
+
+.container #alerta {
+    width: 50%;
+}

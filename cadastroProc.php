@@ -107,14 +107,14 @@ if(isset($_POST['nome_proc']) && isset($_POST['desc_proc']) ){
     $arquivo = $_FILES['arquivo'];
     var_dump($arquivo);
     //destino da imagem
-    $destino = "../img/".$arquivo['name'];
+    $destino = "./img/maiara_estetica/procedimentos/corporais_teste/".$arquivo['name'];
 
     move_uploaded_file($arquivo['tmp_name'], $destino);
 
     
     
 
-    $sql = "INSERT INTO procedimentos (nome_proc, desc_proc, imagem_proc) VALUES (:nome_proc, :desc_proc, :img_proc)";
+    $sql = "INSERT INTO procedimentos (nome_proc, desc_proc, img_proc) VALUES (:nome_proc, :desc_proc, :img_proc)";
 
     $cad = $conn->prepare($sql);
     $cad->bindValue(':nome_proc', $nome_proc );
@@ -146,8 +146,8 @@ if(isset($_POST['nome_proc']) && isset($_POST['desc_proc']) ){
 
 
             <form action ="cadastroProc.php" method="post" enctype="multipart/form-data" >
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Tipo de procedimento</label>
+              <div class="form-group" >
+                <label for="exampleFormControlSelect1" >Tipo de procedimento</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                   <option>Selecione</option>
                   <option>2</option>
@@ -171,7 +171,7 @@ if(isset($_POST['nome_proc']) && isset($_POST['desc_proc']) ){
             </div>
 
             <div class="form-group">
-               <input type="submit">
+               <input type="submit" class="btn btn-success">
             </div>
             </form>
           </div>

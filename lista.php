@@ -3,18 +3,23 @@
 
 require_once "classes/conexao.php";
 require_once "classes/procedimentos.php";
-$p= new procedimentos();
-$sql = "SELECT nome_proc , desc_proc FROM procedimentos ";
-$sql = $conn->prepare($sql);//prepara a consulta para executar
 
+
+$p = new procedimentos();
+$sql = "SELECT *  FROM procedimentos ";
+$sql = $conn->prepare($sql);//prepara a consulta para executar
 $sql->execute();//executa
 
 $dados = $sql->fetchAll(PDO::FETCH_ASSOC);//exibe todos os registros do banco em um array
+ 
+
+
 
 
 
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +29,6 @@ $dados = $sql->fetchAll(PDO::FETCH_ASSOC);//exibe todos os registros do banco em
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procedimentos</title>
     <link rel="shortcut icon" href="img/icone_sem_fundo.png" type="image/x-icon">
-
 
     <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
@@ -52,7 +56,7 @@ $dados = $sql->fetchAll(PDO::FETCH_ASSOC);//exibe todos os registros do banco em
 <header>
         <div class="container" id="nav-container" >
             <nav class="navbar navbar-expand-lg fixed-top navbar-light" >
-                <a id="logo" href="" class="navbar-brand"> 
+                <a id="logo" href="index.php" class="navbar-brand"> 
                     <img id="logo" src="img/maiara_estetica/logo2.png" alt="not found">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
@@ -61,19 +65,28 @@ $dados = $sql->fetchAll(PDO::FETCH_ASSOC);//exibe todos os registros do banco em
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
                     
-                        <a class="nav-item nav-link "   id="home-menu" href="#">Sobre mim</a>
-                        <div class=" navbar-nav  dropdown">
-                        <a class="nav-item nav-link dropdlink" data-toggle="dropdown"  id="about-menu"  href="#" >Sobre a empresa</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="nav-item nav-link " style="font-family: Arial, 
+                        Helvetica, sans-serif; font-weight: bold; font-weight: bold;"   id="home-menu" href="#">Sobre mim</a>
+
+                         <a class="nav-item nav-link dropdlink" data-toggle="dropdown">Sobre a empresa</a>
+                          
+                        <a class="nav-item nav-link"  id="services-menu" style="color: rgb(219, 207, 32)" href="#">Ambiente e procedimentos</a>
+                        
+                        <div class="navbar-nav dropdown">
+                        
+                        <a class="nav-item nav-link "  id="portfolio-menu" data-toggle="dropdown" style="font-size: 18px; color: rgb(90, 160, 90)" href="#">Login <i class="fa fa-caret-down"></i></a>
+                  
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="labios.html">Administrador</a>
                           <a class="dropdown-item" href="#">Link 2</a>
                           <a class="dropdown-item" href="#">Link 3</a>
                         </div>
+                  
+                  
                       </div>
-                        <a class="nav-item nav-link"  id="services-menu" style="color: rgb(219, 207, 32)" href="#">Ambiente e procedimentos</a>
-                        
-                        <a class="nav-item nav-link"  id="portfolio-menu"  style="color: rgb(90, 160, 90)" href="#">Contato</a>
-                  </div>
+
+
+                         </div>
                 
 
                 
@@ -93,120 +106,178 @@ $dados = $sql->fetchAll(PDO::FETCH_ASSOC);//exibe todos os registros do banco em
         </div>
      </div>
 
-     <div id="services-area" >
-      <div class="container-fluid" >
-      <div class="row"> <!--classe das linhas-->
-      <div class="col-md-5" style="padding-bottom: 20%;"><!--numro de colunas para tela de tamanha medio-->
-     
-        
+
      <?php
           
           if(count($dados) > 0){
-            for($c=0; $c < count($dados); $c++){
-              foreach($dados[$c] as $kay => $value){
 
-                ?>
-
-               <?php
-                if ($c % 2 == 0){
-                  
-                  if ($kay == "nome_proc"){
-                    ?>
-    
-         
-                   <h4 class="title-clear" ><?php echo $value; ?></h4> 
-
-                    
-                   <?php
-                     
-                  
-              } if ($kay == "desc_proc") {
-  
-                ?>
-                <p class="clear" ><?php echo $value; ?></p>
-
-                 
-                <?php
-              }
-
-             }
-
-          }
-
-
-        }
+            ?>
+            <div id="services-area"  >
+            <div class="container-fluid">
+            <div class="row"> <!--classe das linhas-->
+            <div class="col-md-5"><!--numro de colunas para tela de tamanha medio-->
               
-      }
+            <!--botao pro model-->
+            <a  class=" btn btn-success" href="cadastroProc.php" >Cadastrar </a>
 
-      
-          
-          ?>
-            
-            
-            <p class="clear">estimula as glândulas proporcionando um efeito relaxante e auxilia na diminuição da 
-                celulite - Indicações: eliminar toxinas, reduzir celulite, gordura localizada, flacidez e 
-                medidas.</p>
-
-          <img id="clear" src="img/maiara_estetica/procedimentos/corporais/massagem_bambu.jpg"  alt="agencia hdc"><!--img-fluid faz a imagem se adaptar ao tamanho da div-->
-        </div>
-         
-        <div class="col-md-2"></div>
+          </div>
+          </div>
+          </div>
+          </div>
 
          
           
-          <div class="col-md-5"  id="diamante"><!--numro de colunas para tela de tamanha medio-->
-         
-          <?php
-          
-          if(count($dados) > 0){
+              <?php
             for($c=0; $c < count($dados); $c++){
-              foreach($dados[$c] as $kay => $value){
-                
-                if ($c % 2 >= 1){
+              ?>
+                <div id="services-area" >
+                <div class="container-fluid" >
+                <div class="row"> <!--classe das linhas-->
+                <div class="col-md-5"><!--numro de colunas para tela de tamanha medio-->
+                  
+                    <?php
+                  if ($c % 2 == 0){
+                      foreach($dados[$c] as $kay => $value){
+                        
+                      
 
-                 
+                          
+                          
                   if ($kay == "nome_proc"){
                     ?>
     
-         
-                   <h4 class="title-clear" ><?php echo $value; ?></h4> 
+    
+                     <h4 class="title-clear" ><?php echo $value; ?></h4> 
 
-                    
-                   <?php
-                     
                   
-              } if ($kay == "desc_proc") {
-  
+                  <?php
+
+                     
+                  } 
+
+              else if ($kay == "desc_proc") {
+                        
                 ?>
-                <p class="clear" ><?php echo $value; ?></p>
-                 
+                <p class="clear" style="min-height: 80%; max-height: 100%;"><?php echo $value; ?></p>
+
+                
+                
                 <?php
               }
+
+              
+              
+            }
+           
+           ?>
+           
+           <div class="col-md-5"style="margin-left: 7%" >
+           <a class="btn btn-danger" href="lista.php?id=<?php echo $dados[$c]['id_proc'];?>" >Excluir</a>
+          </div>
+           <?php
+
             
+        }
+        else if ($c % 2 > 0){
+        
+
+        ?>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5" style="margin-top: -20%;" ><!--numro de colunas para tela de tamanha medio-->
+      
+      
+
+            <?php  
+        
+        
+
+        
+          foreach($dados[$c] as $kay => $value){
+
+            if ($kay == "nome_proc"){
+              ?>
+
+
+               <h4 class="title-diamante" ><?php echo $value; ?></h4> 
+
+               
+            <?php
+            } if ($kay == "desc_proc") {
+                        
+              ?>
+              <p class="diamante" style="min-height: 50%; max-height: 100%; "><?php echo $value; ?></p>
+
+             
+              
+              <?php
             }
 
-           }
-          
-        }
-              
-      }
+            
 
-      
-          
+          }
           ?>
-            <h4 class="title-diamante" >Massagem relaxante</h4>
-            <p class="diamante">Relaxamento dos músculos e, por consequência, diminuição de dores musculares, 
-                diminuição da ansiedade e estresse, alívio de enxaquecas e dores de cabeça, melhora da circulação 
-                sanguínea e do sistema imunológico.</p>
+          <div class="col-md-5">
+         <a class="btn btn-danger" href="lista.php?id=<?php echo $dados[$c]?>">Excluir</a>
+        </div>
+        </div>
+         <?php
+
+              
+      
+            ?>
+          
          
-            <img id="diamanteimg"  src="img/maiara_estetica/procedimentos/corporais/massagem_relax.jpg" style="width: 80%;" alt="agencia hdc"><!--img-fluid faz a imagem se adaptar ao tamanho da div
-        -->
+        </div>
+        <?php
+        }
+        ?>
           </div>
+          </div>
+          <?php
+        
+
+  
+
+  }
+
+}
+          
+      ?>
+            
+           
+         
+        <!--numro de colunas para tela de tamanha medio-->
+         
+       
+
+
+            
+</body>
+</html>
+<?php
+          //------DELETE------
+
+          
+          if(isset($_GET['id_proc'])){
+            
+            $id_proc = addslashes($_GET['id_proc']);
+           
+            
+              $p->excluirProc($id_proc);
+
+            
+          
+            
+            header("location: lista.php");
+
+            echo "excluid0";
+
+           
+
+            
+          }   
           
 
-        </div>
 
-      </div>
-
-    </div>
-
+?>

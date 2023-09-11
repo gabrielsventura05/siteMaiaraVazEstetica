@@ -96,16 +96,24 @@ header , #navbar-links > .navbar-nav > #about-menu{
   display: inline-block;
 }
 
+
+
+
 .dropdown-menu {
   display: none;
-  position: absolute;
-  
-  /*margin-left: 5%;*/
+  position: relative;
+ 
+  margin-right: 5%;
   background-color: white;
-  min-width: 16px;
+min-width: 155px;
+  
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
+
+
+
+
 
 .dropdown-menu a {
   color: black;
@@ -119,6 +127,8 @@ header , #navbar-links > .navbar-nav > #about-menu{
   
   
 }
+
+
 
 .dropdown:hover .dropdown-menu {
   display: block;
@@ -193,7 +203,24 @@ header , #navbar-links > .navbar-nav > #about-menu{
 
 #about-area2 {
 
+
   background-color: rgb(147, 155, 160); 
+
+  
+}
+
+#about-area2  h4 {
+
+  font-size: 27.5px;
+
+}
+
+#about-area2 p {
+
+  font-family: 'Playfair Display', serif;
+  text-align: justify;
+  font-size: 20px;
+  padding-top: 5%; line-height: 2;
   
 }
 
@@ -206,30 +233,24 @@ header , #navbar-links > .navbar-nav > #about-menu{
     margin-top: 5%;
 }
 
-.main-title::before {
-  content: "";
-  border-top: 2px solid #333;
-  width: 15%;
-position: absolute;
-  top: 68%;
-  left: 42.5%;
-  
-}
 
-.main-title2 {
+
+.main-title-2 {
   color: #444;
   margin: 0 0 65px 0;
   font-size: 40px;
   text-align: center;
+  margin-top: -5%;
 }
 
-.main-title2::before {
-  content: "";
-  border-top: 2px solid #333;
-  width: 15%;
-position: absolute;
-  top: 40%;
-  left: 42.5%;
+#img2 {
+  width: 70%;
+}
+
+#section3 {
+
+  margin-left: -10%; 
+  text-align: justify;
 }
 
 .main-title3 {
@@ -240,14 +261,7 @@ position: absolute;
   
 }
 
-.main-title3::before {
-  content: "";
-  border-top: 2px solid #333;
-  width: 15%;
-position: absolute;
-  top: 18%;
-  left: 42.5%;
-}
+
 
 .main-title-ambiente {
   color: #444;
@@ -256,16 +270,6 @@ position: absolute;
   text-align: center;
   
 }
-
-.main-title-ambiente::before {
-  content: "";
-  border-top: 2px solid #333;
-  width: 15%;
-position: absolute;
-  top: 78%;
-  left: 42.5%;
-}
-
 
 
 
@@ -276,6 +280,7 @@ position: absolute;
     color: #444;
     
     font-weight: bold;
+    text-align: center;
 }
 
 #about-list {
@@ -421,6 +426,114 @@ position: absolute;
 
 }
 
+/*Tabela*/
+
+#services-area  .container  table { 
+background-color: #f9f9f9;
+  border-spacing: 0px;
+  
+  
+  border-collapse: separate; 
+  width: 100%; 
+  height: 80%;
+  margin: auto;
+}
+
+
+
+
+#services-area .container  #th1 {
+
+  text-align: center;
+  background-color: white;
+
+font-size: 25px;
+ width: 400px;
+ 
+ }
+
+ #services-area .container  #th2 {
+
+  
+  background-color: white;
+width: 300px;
+font-size: 25px;
+padding-left: 13%;
+ }
+
+ #services-area .container  #col1 { 
+ 
+  margin-top: 5%;
+  border-top-width: 5px;
+  width: 300px;
+  position: relative;
+  padding: 5px;
+ vertical-align: middle;
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 10%;
+ 
+ background-color: white;
+ border-color: white;
+ 
+
+
+ 
+ 
+
+ }
+
+
+
+ #services-area .container  #col2 { 
+  color: black;
+
+  width: 115px;
+  background-color: rgb(207, 123, 12);
+  font-size: 20px;
+
+  padding: 2%;
+ 
+ padding-left: -10px;
+ border-top-width: 2px;
+border-top-left-radius: 30px;
+border-bottom-left-radius: 30px;
+border-top-right-radius: 30px;
+border-bottom-right-radius: 30px;
+border-color: white;
+ font-weight: bolder;
+ text-align: center;
+ vertical-align: middle;
+ 
+
+
+ }
+
+ 
+ 
+ 
+  
+
+#services-area .container table{
+border-spacing: 7px;
+padding-right: 10%;
+  width: 100%;
+}
+
+
+#services-area .container table, td { 
+  
+ 
+
+  border: 0px solid white
+  
+  
+  
+  
+}
+
+
+
 
 /*Estilos do email*/
 #news-area {
@@ -562,6 +675,22 @@ position: absolute;
     color: #65DAF9;
 }
 
+.container-fluid #lista {
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.container ul {
+  list-style-type: none;
+}
+
+.container-fluid ul li {
+
+  margin-top: ;
+}
+
 /*copyright*/
 
 
@@ -682,6 +811,72 @@ position: absolute;
   
   @media(max-width: 425px) {
 
+    #logo{
+
+      width: 60%;
+    }
+
+    .dropdown {
+
+      margin-left: 5%;
+    }
+
+    .about-title{
+
+      margin-top: -5%;
+    }
+
+    #img1 {
+
+      margin-top: -5%;
+    }
+
+   #section {
+
+    padding-bottom: 10%;
+   }
+
+    h3{
+
+      margin-top: -5%;
+    }
+
+    .main-title-2 {
+
+      margin-top: 5%;
+    }
+    
+    #section2 {
+
+      margin-top: -10%;
+    }
+
+   #img2 {
+
+   
+    margin-left: 15%;
+   }
+
+   #section3 {
+    margin-left: 2%;
+   }
+
+   #title {
+
+    margin-top: -15%;
+   }
+
+   #p1
+   {
+    font-size: 15px;
+
+   }
+
+   #link{
+
+    font-size: 20px;
+   }
+   
     /* slider */
     #mainSlider {
       margin-top: 90px;

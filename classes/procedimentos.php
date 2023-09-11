@@ -4,25 +4,20 @@
 
  
 
- 
 class procedimentos {
 
-            private $conn;
-            public $msgErro="";
             
- 
 
-    public function cadastrarProcedimento($nome_proc, $desc_proc, $imagem_proc ){
-        global $conn;
+    public function cadastrarProcedimento($nome_proc, $desc_proc, $img_proc ){
+         
+        $c = new conexao();
 
-        $sql = "SELECT id_proc  FROM  procedimentos WHERE nome_proc = :nome_proc";
-        $sql = $conn->prepare($sql);
+        $conexao = $c->conectar();
+
 
         
 
-        $sql->bindValue(':nome_proc', $nome_proc);
-
-        $sql->execute();
+        
 
         if ($sql->rowCount() > 0){
             $total = $sql->fetch();
@@ -53,7 +48,29 @@ class procedimentos {
         
     }
 
-    public function listarRegistros(){
+    public function excluirProc($id_proc){
+
+        global $conn;
+        
+        $sql = "DELETE * FROM procedimentos WHERE id_proc = :id";
+        $sql = $conn->prepare($sql);
+        $sql ->bindValue(":id", $id_proc);
+
+        $sql->execute();
+
+    
+}
+        
+
+
+            
+
+
+       
+
+    }
+
+/*    public function listarRegistros(){
 
 
         global $conn;
@@ -64,9 +81,9 @@ class procedimentos {
 
         $dados = $sql->fetchAll(PDO::FETCH_ASSOC);//exibe todos os registros do banco em um array
         return $dados;
-    }
+    }*/
 
 
-}
+
 
 ?>
