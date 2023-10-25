@@ -47,7 +47,7 @@ include "classes/usuarios.php";
  <header>
         <div class="container" id="nav-container" >
             <nav class="navbar navbar-expand-lg fixed-top navbar-light" >
-                <a id="logo" href="" class="navbar-brand"> 
+                <a id="logo" href="index.php" class="navbar-brand"> 
                     <img id="logo" src="img/maiara_estetica/logo2.png" alt="not found">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
@@ -59,14 +59,19 @@ include "classes/usuarios.php";
                         
                         
                         
-                  <a class="nav-item nav-link"   id="about-menu" style="color: rgb(238, 94, 10);" href="#" >Sobre a empresa</a>
+                  <a class="nav-item nav-link"   id="about-menu" style="color: rgb(238, 94, 10);" href="ambiente.php" >Ambiente</a>
                   
                  
-                  
-                  <a class="nav-item nav-link "    id="services-menu"  style="color: rgb(219, 207, 32)" href="#">Ambiente e procedimentos</a>
+                  <div class="dropdown">
+                                  
+                  <a class="nav-item nav-link "    id="services-menu"  style="color: rgb(219, 207, 32)" href="#"> Procedimentos</a>
                 
                   
-                
+                  <div class="dropdown-menu">
+                  <a class="dropdown-item" href="">Procedimentos Faciais</a>
+                  <a class="dropdown-item" href="sair.php">Procedimentos Corporais</a>
+                  </div>
+              </div>
                 
           
                   
@@ -133,8 +138,9 @@ include "classes/usuarios.php";
               </div>
 
 
-          <div class="form-group">
-              <a style="margin-left: 11%; padding-top: 10%; color: black;" href="cadastroUsuario.html">Cadastrar</a>
+          <div class="form-group" id="texto">
+              <p>Se não tiver cadastro, <a style="margin-left:; padding-top: 10%; color: black;"
+               href="cadastrarUsuario.php">clique aqui</a>
             </div>
 
               </form>

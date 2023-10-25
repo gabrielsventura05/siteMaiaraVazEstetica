@@ -1,11 +1,9 @@
 <?php
 
-include "classes/conexao.php";
-include "classes/usuarios.php";
-
-
+session_start();
+require_once "../classes/conexao.php";
+require_once "../classes/ambiente.php";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,14 +11,14 @@ include "classes/usuarios.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="shortcut icon" href="img/icone_sem_fundo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icone_sem_fundo.png" type="image/x-icon">
 
        
      <!--estilos-->
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/login.css">
 
 
 <!--fonts-->
@@ -50,7 +48,7 @@ include "classes/usuarios.php";
         <div class="container" id="nav-container" >
             <nav class="navbar navbar-expand-lg fixed-top navbar-light" >
                 <a id="logo" href="" class="navbar-brand"> 
-                    <img id="logo" src="img/maiara_estetica/logo2.png" alt="not found">
+                    <img id="logo" src="../img/maiara_estetica/logo2.png" alt="not found">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
                 aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,69 +81,70 @@ include "classes/usuarios.php";
 
       
     <div id="login">
-      <div class="container" style="padding-bottom: 10%;">
+      <div class="container" style="padding-bottom: 10%; justify-content: center;">
 
-<?php
+      <!--BUSCA O ID PARA RETORNAR OS DADOS NO FORMULARIO DE ATUALIZAÇÃO-->
+        <?php
 
-if (!empty($_POST["nome_usuario"]) && !empty($_POST["email"]) && !empty($_POST["senha"])){
+        if (isset($_GET["id_amb"]) && !empty($_GET["id_amb"])){
 
-  $u = new usuarios();
+          echo "encontrado";
 
-  
-$nome_usuario = addslashes($_POST["nome_usuario"]);
-$email = addslashes($_POST["email"]);
-$senha = md5(addslashes($_POST["senha"]));
+          $c = new conexao();
 
+          $conexao = $c->conectar();
+          $a = new ambiente();
 
-if($u->cadastrarUsuarios($nome_usuario, $email, $senha) == true){
+          $sql = "SELECT * from ambiente where id_amb = ".$_GET["id_amb"];
+         
+          $result = mysqli_query($conexao, $sql);
 
-  ?>
-  <div style="width: 50%; margin: auto;" id="alerta" class="alert alert-success">
-    Cadstrado!
-  </div>
+          $row = mysqli_fetch_assoc($result);
+          $id_amb = $row["id_amb"];
 
-  <?php
-}
+          $img_amb = $row["img_amb"];
 
-
-
-}
-
-?>
+        }
         
+?>
+
+
+
+        
+
+        
+
         <div class="row">
           <div class="col-sm-12 ">
-            <form action="cadastrarUsuario.php" method="post" enctype="multipart/form-data">
+            <form action="../sub-rotinas/atualizarAmbiente.php"  method="post" enctype="multipart/form-data">
                 <div class="col-12" id="title">
-                <h2 >cadastro</h2>
+                <h2 >Ambiente</h2>
                 </div>
-
-                <div class="form-group form-outline form-white mb-4" id="input1" >
-                  
-                <label for="exampleFormControlInput1" >Nome</label>
-                <input type="text" class="form-control" name="nome_usuario" id="tituloFacial">
-               </div>
-
-                <div class="form-group form-outline form-white mb-4" id="input1" >
-                  
-                <label for="exampleFormControlInput1" >Email</label>
-                <input type="text" class="form-control" name="email" id="tituloFacial">
-               </div>
                 
-                   <div class="form-group" id="input1" >
-                <label for="exampleFormControlInput1" >Senha</label>
-                <input type="password" class="form-control" name="senha" id="tituloFacial">
-               </div>
-
-               
-             
+                <div class="form-group form-outline form-white mb-4" id="input1" >
+                  <label for="exampleFormControlInput1" >imagem</label>
+              
+                 
+                </div>
+                <div class="form-group" id="input2" >
+                <input type="file" name="img_ambU" id="">
+                </div>
+ 
+ 
   
-             
+      
   
               <div class="form-group" id="botao">
-                 <input type="submit" class="btn btn-success" value="Enviar">
+                <input type="hidden" name="id_amb" value="<?php echo $id_amb; ?>">
+                 <input type="submit" class="btn btn-success" name="update" value="enviar">
               </div>
-              </form>
+
+
+          <div class="form-group">
+               <a style="margin-left: 11%; padding-top: 10%; color: black;" href="ambiente.php">voltar</a>
+            
+            </div>
+            </form>
             </div>
 
           
@@ -153,8 +152,11 @@ if($u->cadastrarUsuarios($nome_usuario, $email, $senha) == true){
       </div>
     </div>
 
+
+
    
       
                  
 </body>
 </html>
+

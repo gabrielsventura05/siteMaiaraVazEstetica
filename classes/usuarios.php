@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 class usuarios {
 
     public function cadastrarUsuarios($nome_usuario, $email, $senha){

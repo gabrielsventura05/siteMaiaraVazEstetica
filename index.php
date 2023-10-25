@@ -1,6 +1,13 @@
 <?php
 
-include "classes/conexao.php";
+session_start();
+include_once "classes/conexao.php";
+include_once "classes/usuarios.php";
+
+$c = new conexao();
+
+  $conexao = $c->conectar();
+
 
 ?>
 
@@ -16,17 +23,18 @@ include "classes/conexao.php";
     
      <!--estilos-->
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="css/index.css">
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+ integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <link rel="stylesheet" href="css/index.css">
 
 <!--fonts-->
-  
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-  
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
+
+
 
 <!--scripts-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
@@ -48,41 +56,76 @@ include "classes/conexao.php";
    
     
     <header>
-        <div class="container" id="nav-container" >
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-                <a id="logo" href="index.php" class="navbar-brand"> 
-                    <img id="logo" src="img/maiara_estetica/logo2.png" alt="not found">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
-                aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+    <div class="container" id="nav-container" >
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+            <a id="logo" href="index.html" class="navbar-brand"> 
+                <img id="logo" src="img/maiara_estetica/logo2.png" alt="not found">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
+            aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            
+            <div class="collapse navbar-collapse justify-content-end" style="float: left;"id="navbar-links" style="margin-right: 5%;">
                 
-                
-                <div class="collapse navbar-collapse justify-content-end" style="float: left;"id="navbar-links" style="margin-right: 5%; width: 100%">
+                    <a class="nav-item nav-link "   id="home-menu" href="#">Sobre mim</a>
                     
-                        <a class="nav-item nav-link "   id="home-menu" href="#">Sobre mim</a>
-                        
-                        
-                        
-                        <a class="nav-item nav-link"   id="about-menu" style="color: rgb(238, 94, 10);" href="#" >Sobre a empresa</a>
-                        
-                     
-                        
-                        <a class="nav-item nav-link "    id="services-menu"  style="color: rgb(219, 207, 32)" href="#">Ambiente e procedimentos</a>
-                      
-                        
-                      
-                      
-                
-                        
-                        <a class="nav-item nav-link "   style="font-size: 18px; color: rgb(90, 160, 90)" href="login.php">Login </a>
+                    
+                    
+                    <a class="nav-item nav-link"   id="about-menu" style="color: rgb(238, 94, 10);" href="#" >Sobre a empresa</a>
+                    
+                   
+                    
+                    <a class="nav-item nav-link "    id="services-menu"  style="color: rgb(219, 207, 32)" href="#">Ambiente e procedimentos</a>
                   
-                        
-                </div>
+                    <?php
+                  
+                    $u = new usuarios();
+
+                    
+                    if(isset($_SESSION['usuario'])){
+              $sessao = $_SESSION['usuario'];
+
+              $sql = "SELECT id_usuario,  email FROM usuarios where email ='$sessao'";
+              $result = mysqli_query($conexao, $sql);
+
+              if($rows =mysqli_fetch_assoc($result)):
+
+                if($rows["email"] == $sessao):
+              
+              ?>
                 
-            </nav>
-        </div>
+                                
+                  <div class="dropdown">
+                                  
+                  <a class="nav-item nav-link dropdown-toggle "  data-toggle="dropdown"  style="font-size: 18px; color: rgb(90, 160, 90)" href="login.html">Login </a>
+                  
+                  
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Perfil</a>
+                  <a class="dropdown-item" href="sair.php">Sair</a>
+                  </div>
+              </div>
+              <?php
+
+                endif;
+              endif;
+
+              } else {
+
+?>
+  <a class="nav-item nav-link"  style="font-size: 18px; color: rgb(90, 160, 90)" href="login.php">Login </a>
+    
+<?php
+}
+
+
+?>
+            </div>
+            
+        </nav>
+    </div>
     </header>
     <main>
         
@@ -123,7 +166,7 @@ include "classes/conexao.php";
                   
                   <div class="col-md-6" id="section" ><!--numro de colunas para tela de tamanha medio-->
                     <h4 >Como você se identificou com a área?</h4>
-                    <p >Me apaixonei pelas massagens terapêuticas no 
+                    <p  style="font-family: 'Playfair Display', serif;">Me apaixonei pelas massagens terapêuticas no 
                       primeiro contatocom as terapias manuais, daí em diante, descobri que meu propósito de vida
                       é levar mais cuidado, saúde e bem-estar, proporcionando assim, uma vida melhor para as pessoas.
                      </p>
@@ -157,25 +200,21 @@ include "classes/conexao.php";
                   
                     <img src="img/maiara_estetica/ambiente/ambiente2 (2).jpg"  style=" max-width: 90%;  width: 250px; height: 330px;" class="img-fluid" alt="projeto 1">
                     <p  id="p1">Ambiente espaçoso, totalmente confortável.<br>
-                      <a id="link" href="ambiente.php">veja mais >>></a></p>
+                      <a id="link" href="view/ambiente.php">veja mais >>></a></p>
                     
                   </div>
                   <div class="col-md-4 project-box dsg" >
                     
                     <img src="img/maiara_estetica/procedimentos/faciais/procedimento1.jpg" style=" width: 80%; width: 250px; height: 330px;" class="img-fluid" alt="projeto 1">
                     <p id="p1">Nossos procedimentos faciais<br>
-                    <a id="link" href="procedimentosfaciais.html">veja mais >>></a></p>
+                    <a id="link" href="view/procedimentosfaciais.php">veja mais >>></a></p>
                   </div>
                   <div class="col-md-4 project-box seo">
                     <img src="img/bambu4.jpg" style="width: 80%; width: 250px; height: 330px;"  class="img-fluid" alt="projeto 1">
                     <p id="p1"> Nossos procedimentos coporais<br>
-                    <a id="link" href="lista.php">veja mais >>></a></p>
+                    <a id="link" href="view/procedimentosCorporais.php">veja mais >>></a></p>
                   </div>
-                  <div class="col-md-4 project-box dev">
-                    <img src="img/maiara_estetica/procedimentos/bocais/boca.jpeg"  style="width: 250px; height: 330px;" class="img-fluid" alt="projeto 1" style="width: 90%;">
-                    <p id="p1"> Nossos procedimentos labiais<br>
-                      <a id="link" href="labios.html">veja mais >>></a></p>
-                  </div>
+                 
                  
                 </div>
               </div>
@@ -292,7 +331,7 @@ include "classes/conexao.php";
 
                         <tr>
                           <td  id="col1">Depilação</td>
-                          <td id="col2">R$ 20,00 a 100,00 </td>
+                          <td id="col2">R$ 20,00 a R$ 100,00 </td>
                         </tr>
 
                         <tr>
@@ -320,7 +359,7 @@ include "classes/conexao.php";
       
 
       
-        <
+        
     </main>
 
     
@@ -408,14 +447,7 @@ include "classes/conexao.php";
             
             
 
-            
-
-            
-           
-          
-           
-
-      <!--RODAPÉ-->
+        <!--RODAPÉ-->
       <div id="copy-area" style="padding-bottom: 5%;">
         <div class="container">
         <div class="row">
