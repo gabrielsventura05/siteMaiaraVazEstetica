@@ -103,8 +103,7 @@ $c = new conexao();
                   
                   
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Perfil</a>
-                  <a class="dropdown-item" href="sair.php">Sair</a>
+                   <a class="dropdown-item" href="sair.php">Sair</a>
                   </div>
               </div>
               <?php
@@ -235,7 +234,7 @@ $c = new conexao();
                       
                         
                         <tr>
-                           <td id="col1">Massagem comm Bambu</td>
+                           <td id="col1">Massagem com Bambu</td>
                           <td id="col2">R$ 100,00 </td>
                         </div>
                         </tr>
@@ -401,7 +400,7 @@ $c = new conexao();
           <div class="col-md-12">
 
 
-          <p style="font-size: 40px; color: red;"><i class="fas fa-map-marker-alt"></i></p><p style="font-size: 30px;">  R. Ângelo Trindade - Centro, Araras - SP, 13600-340</p>
+          <p style="font-size: 40px; color: red;"><i class="fas fa-map-marker-alt"></i></p><p style="font-size: 30px;">  R. Ângelo Trindade, 511 - Centro, Araras - SP, 13600-340</p>
             </div>
 
             <div class="col-md-12">
@@ -452,7 +451,7 @@ $c = new conexao();
         <div class="container">
         <div class="row">
           
-            <div class="col-12" style="margin-top: 2.5%; ">
+            <div class="col-12" style="margin-top: 5.5%; ">
               <p style=" font-size: 20px;">Desenvolvido por <a href="https://www.VenturaFazSite.com.br" target="_blank">Ventura sites</a> &copy; 2023</p>
 
             </div>

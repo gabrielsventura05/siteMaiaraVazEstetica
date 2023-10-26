@@ -57,8 +57,7 @@ include_once "../classes/usuarios.php";
                   
                   
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Perfil</a>
-                  <a class="dropdown-item" href="../">Sair</a>
+                    <a class="dropdown-item" href="../sair .php">Sair</a>
                   </div>
               </div>
               <?php

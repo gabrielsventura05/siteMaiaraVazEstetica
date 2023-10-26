@@ -21,9 +21,9 @@ $conexao = $c->conectar();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procedimentos</title>
-    <link rel="shortcut icon" href="../img/icone_sem_fundo.png" type="image/x-icon">
-    
+     <link rel="shortcut icon" href="../img/icone_sem_fundo.png" type="image/x-icon">
+     <title>Procedimentos faciais</title>
+   
      <!--estilos-->
 
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -98,7 +98,7 @@ if (isset($_GET["mensagem"]) && !empty($_GET["mensagem"])){
   <?php
 }
 ?>
-        <div style="justify-content: left; margin-top: 5%;">
+        <div style="justify-content: left; margin-top: 7%;">
 
             
               <div class="form-group">
@@ -110,9 +110,9 @@ if (isset($_GET["mensagem"]) && !empty($_GET["mensagem"])){
           </div>
 
           
+        
          
-         
-          <div class="container">
+          <div class="container" style="margin-top: 3%;" >
             <div class="col-md-12" >
             <strong><p class="title-1">Hidratação facial</p></strong>
             <p>Deixa a pele maisiluminada e vistosa, , menos ressecada, protege contra poluição do dia a dia,

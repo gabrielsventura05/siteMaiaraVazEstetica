@@ -194,66 +194,7 @@ endwhile;
 
 
   
-  
-
-
-
-          <div class="col-md-3 project-box seo">
-            <img src="img/maiara_estetica/ambiente/ambiente1 (2).jpg" class="img-fluid" alt="projeto 1">
-
-            <div style="display: flex; align-items: center, vertical-align: center">
-
-              <a id="excluir" class="btn btn-danger" href="http://">excluir</a>
-
-              
-              
-              <input id="file" type="file" class="form-control-file" name="arquivo" >
-              
-            
-            </div>
-          </div>
-          
-
-          <div class="col-md-3 project-box dev">
-            <img src="../img/maiara_estetica/ambiente/ambiente4.jpg" class="img-fluid" alt="projeto 1" >
-          </div>
-
-           <div class="col-md-3 project-box dev">
-            <img src="../img/maiara_estetica/ambiente/ambiente4.jpg" class="img-fluid" alt="projeto 1" >
-          </div>
-          <div class="col-md-3 project-box dsg">
-            <img src="../img/maiara_estetica/ambiente/ambiente6.jpg" class="img-fluid" alt="projeto 1" >
-          </div>
-          <div class="col-md-3 project-box seo">
-            <img src="../img/maiara_estetica/ambiente/ambiente9.jpg" class="img-fluid" alt="projeto 1" style="  ">
-          </div>
-          <div class="col-md-3 project-box seo">
-            <img src="../img/maiara_estetica/ambiente/ambiente5.jpg" class="img-fluid" alt="projeto 1" style="  ">
-          </div>
-
-          <div class="col-md-3 project-box seo">
-            <img src="../img/maiara_estetica/ambiente/ambiente6.jpg" class="img-fluid" alt="projeto 1" style="  ">
-          </div>
-          <div class="col-md-3 project-box seo">
-            <img src="../img/maiara_estetica/ambiente/ambiente7.jpg" class="img-fluid" alt="projeto 1" style="  ">
-          </div>
-          <div class="../col-md-3 project-box seo">
-            <img src="../img/maiara_estetica/ambiente/ambiente8.jpg" class="img-fluid" alt="projeto 1" style="  ">
-          </div>
-          <div class="col-md-3 project-box seo">
-            <img src="../img/maiara_estetica/ambiente/ambiente9.jpg" class="img-fluid" alt="projeto 1" >
-          </div>
-          <div class="col-md-3 project-box seo">
-            <img src=";;/img/maiara_estetica/ambiente/aimbiente10.jpg" class="img-fluid" alt="projeto 1" >
-          </div>
-          </div>
-
-        </div>
-     </div>
-
-    
-    
-    </body>
+  </body>
 
 </html>
 
