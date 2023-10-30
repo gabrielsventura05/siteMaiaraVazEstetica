@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 include "classes/conexao.php";
 include "classes/usuarios.php";
 ?>
@@ -10,10 +10,10 @@ include "classes/usuarios.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="shortcut icon" href="img/icone_sem_fundo.png" type="image/x-icon">
+      <link rel="shortcut icon" href="img/icone_sem_fundo.png" type="image/x-icon">
 
-       
+      <title>Login</title>
+     
      <!--estilos-->
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -64,12 +64,12 @@ include "classes/usuarios.php";
                  
                   <div class="dropdown">
                                   
-                  <a class="nav-item nav-link "    id="services-menu"  style="color: rgb(219, 207, 32)" href="#"> Procedimentos</a>
+                  <a class="nav-item nav-link   dropdown-toggle"    id="services-menu" data-toggle="dropdown" style="color: rgb(219, 207, 32)" href="#"> Procedimentos</a>
                 
                   
                   <div class="dropdown-menu">
-                  <a class="dropdown-item" href="">Procedimentos Faciais</a>
-                  <a class="dropdown-item" href="sair.php">Procedimentos Corporais</a>
+                  <a class="dropdown-item"  style="color: rgb(219, 207, 32)"  href="">Procedimentos Faciais</a>
+                  <a class="dropdown-item" style="color: rgb(219, 207, 32)" href="sair.php">Procedimentos Corporais</a>
                   </div>
               </div>
                 

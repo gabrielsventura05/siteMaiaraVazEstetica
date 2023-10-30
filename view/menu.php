@@ -3,10 +3,14 @@
 session_start();
 include_once "../classes/conexao.php";
 include_once "../classes/usuarios.php";
+
+$c = new conexao();
+
+$conexao = $c->conectar();
 ?>
 
 <link rel="stylesheet" href="../index.css">
-<header>
+  <header>
     <div class="container" id="nav-container" >
         <nav class="navbar navbar-expand-lg fixed-top navbar-light">
             <a id="logo" href="../index.php" class="navbar-brand"> 
@@ -57,7 +61,7 @@ include_once "../classes/usuarios.php";
                   
                   
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="../sair .php">Sair</a>
+                    <a class="dropdown-item" href="../sair.php">Sair</a>
                   </div>
               </div>
               <?php
@@ -79,4 +83,4 @@ include_once "../classes/usuarios.php";
             
         </nav>
         </div>
-  </header>
+    </header>

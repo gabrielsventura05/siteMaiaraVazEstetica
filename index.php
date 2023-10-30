@@ -165,7 +165,13 @@ $c = new conexao();
                   
                   <div class="col-md-6" id="section" ><!--numro de colunas para tela de tamanha medio-->
                     <h4 >Como você se identificou com a área?</h4>
-                    <p  style="font-family: 'Playfair Display', serif;">Me apaixonei pelas massagens terapêuticas no 
+                    <p  style="font-family: 'Playfair Display', serif; 
+                    text-align: justify;
+  font-size: 20px;
+  padding-top: 5%; 
+  line-height: 2;
+  text-align: justify; 
+   ">Me apaixonei pelas massagens terapêuticas no 
                       primeiro contatocom as terapias manuais, daí em diante, descobri que meu propósito de vida
                       é levar mais cuidado, saúde e bem-estar, proporcionando assim, uma vida melhor para as pessoas.
                      </p>
@@ -431,7 +437,7 @@ $c = new conexao();
 </div>
 
 <div class="col-6 ">
-   <a href=""><p style="font-size: 30px;"><i class="fa fa-envelope" style="font-size: 30px; color: rgb(12, 73, 124);"></i>  
+   <a href="mailto:maiaravaz46@gmail.com"><p style="font-size: 30px;"><i class="fa fa-envelope" style="font-size: 30px; color: rgb(12, 73, 124);"></i>  
   maiaravaz46@gmail.com</p></a>
 
   </div>

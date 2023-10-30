@@ -94,9 +94,8 @@ include "menu.php";
               </div>
 
 
-          <div class="form-group">
-              <a style="margin-left: 11%; padding-top: 10%; color: black;" href="cadastrarUsuario.php">Cadastrar</a>
-              <a href="ambiente.php">voltar</a>
+          < <div class="form-group" style="margin-left: 12%; ">
+               <a style="color: black;" href="ambiente.php">voltar</a>
             
             </div>
             </form>

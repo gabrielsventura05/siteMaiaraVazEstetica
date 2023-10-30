@@ -12,7 +12,7 @@ include "classes/usuarios.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="shortcut icon" href="img/icone_sem_fundo.png" type="image/x-icon">
 
        
@@ -46,44 +46,85 @@ include "classes/usuarios.php";
   
 </head>
 <body >
- <header>
-        <div class="container" id="nav-container" >
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light" >
-                <a id="logo" href="" class="navbar-brand"> 
-                    <img id="logo" src="img/maiara_estetica/logo2.png" alt="not found">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
-                aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
-                  <a class="nav-item nav-link "   id="home-menu" href="#">Sobre mim</a>
-                        
-                        
-                        
-                  <a class="nav-item nav-link"   id="about-menu" style="color: rgb(238, 94, 10);" href="#" >Sobre a empresa</a>
-                  
-                 
-                  
-                  <a class="nav-item nav-link "    id="services-menu"  style="color: rgb(219, 207, 32)" href="#">Ambiente e procedimentos</a>
-                
-                  
-                
-                
-          
-                  
-                  <a class="nav-item nav-link "   style="font-size: 18px; color: rgb(90, 160, 90)" href="login.html">Login </a>
-            </div>
-                
 
+<header>
+    <div class="container" id="nav-container" >
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+            <a id="logo" href="../index.php" class="navbar-brand"> 
+                <img id="logo" src="img/maiara_estetica/logo2.png" alt="not found">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
+            aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            
+            <div class="collapse navbar-collapse justify-content-end" style="float: left;"id="navbar-links" style="margin-right: 5%;">
                 
-            </nav>
+                   
+                    
+                    
+                    <a class="nav-item nav-link"   id="about-menu" style="color: rgb(238, 94, 10);" href="ambiente.php" >Ambiente</a>
+                    
+                    <div class="dropdown">
+                    
+                    <a class="nav-item nav-link dropdown-toggle"  data-toggle="dropdown"  id="services-menu"  style="color: rgb(219, 207, 32)" href="#">Procedimentos</a>
+              
+                    <div class="dropdown-menu">
+                  <a class="dropdown-item" href="view/procedimentosFaciais.php" style="color: rgb(219, 207, 32)">Procedimentos Faciais</a>
+                  <a class="dropdown-item" href="view/ProcedimentosCorporais.php" style="color: rgb(219, 207, 32)">Procedimentos corporais</a>
+                      </div>
+                    </div>
+                   
+                   <?php
+
+                    $u = new usuarios();
+                    if(isset($_SESSION['usuario'])){
+                        $sessao = $_SESSION['usuario'];
+
+                        $sql = "SELECT id_usuario,  email FROM usuarios where email ='$sessao'";
+                        $result = mysqli_query($conexao, $sql);
+
+                        while($rows =mysqli_fetch_assoc($result)):
+
+                          if($rows["email"] == $sessao):
+                        
+                        ?>
+                
+                                
+                  <div class="dropdown">
+                                  
+                  <a class="nav-item nav-link dropdown-toggle "  data-toggle="dropdown"  style="font-size: 18px; color: rgb(90, 160, 90)" href="login.html">Login </a>
+                  
+                  
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="../sair .php">Sair</a>
+                  </div>
+              </div>
+              <?php
+
+                endif;
+              endwhile;
+
+              } else {
+
+              ?>
+                <a class="nav-item nav-link"  style="font-size: 18px; color: rgb(90, 160, 90)" href="../login.php">Login </a>
+                  
+              <?php
+              }
+
+
+              ?>
+            </div>
+            
+        </nav>
         </div>
-        </header>
+    </header>
 
       
     <div id="login">
-      <div class="container" style="padding-bottom: 10%;">
+      <div class="container" style="padding-top: 10%;">
 
 <?php
 

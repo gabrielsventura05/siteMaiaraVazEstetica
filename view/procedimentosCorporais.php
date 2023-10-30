@@ -90,13 +90,31 @@ if (isset($_GET["mensagem"]) && !empty($_GET["mensagem"])){
 }
 ?>
       </div>
+      <?php
+        if(isset($_SESSION['usuario'])){
+    $sessao = $_SESSION['usuario'];
+      
+    $sql2 = "SELECT id_usuario,  email FROM usuarios where email ='$sessao'";
 
+    $result2 = mysqli_query($conexao, $sql2);
+  
+    if($rows2=mysqli_fetch_assoc($result2)):
+
+      if($rows2["email"] == "admin@hotmail.com"):
+        ?>
          
           <div clas="col-md-2"style="padding-left: 5%; margin-top: 3%" >
               <div class="form-group"  >
               <a href="cadastroProcCorporais.php" class="btn btn-success"  >Adicionar</a>
               </div>
               </div>
+
+              <?php
+
+      endif;
+    endif;
+  }
+              ?>
               </div>
          </div>
 

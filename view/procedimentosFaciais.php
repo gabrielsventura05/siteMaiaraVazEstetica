@@ -99,20 +99,40 @@ if (isset($_GET["mensagem"]) && !empty($_GET["mensagem"])){
 }
 ?>
         <div style="justify-content: left; margin-top: 7%;">
+<?php
+        if(isset($_SESSION['usuario'])){
+    $sessao = $_SESSION['usuario'];
+      
+    $sql2 = "SELECT id_usuario,  email FROM usuarios where email ='$sessao'";
+
+    $result2 = mysqli_query($conexao, $sql2);
+  
+    if($rows2=mysqli_fetch_assoc($result2)):
+
+      if($rows2["email"] == "admin@hotmail.com"):
+        ?>
+     
 
             
               <div class="form-group">
               <a href="cadastroProcFaciais.php" class="btn btn-success"  >Adicionar</a>
               </div>
+              <?php
+
               
+
+      endif;
+    endif;
+  }
+    ?>
         
            </div>
           </div>
 
           
-        
+         <div class="container" style="margin-top: -3%;" >
          
-          <div class="container" style="margin-top: 3%;" >
+         
             <div class="col-md-12" >
             <strong><p class="title-1">Hidratação facial</p></strong>
             <p>Deixa a pele maisiluminada e vistosa, , menos ressecada, protege contra poluição do dia a dia,

@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 require_once "../classes/conexao.php";
 require_once "../classes/procedimentosFaciais.php";
 ?>
@@ -44,41 +44,10 @@ require_once "../classes/procedimentosFaciais.php";
   
 </head>
 <body >
- <header>
-        <div class="container" id="nav-container" >
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light" >
-                <a id="logo" href="" class="navbar-brand"> 
-                    <img id="logo" src="../img/maiara_estetica/logo2.png" alt="not found">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
-                aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
-                  <a class="nav-item nav-link "   id="home-menu" href="#">Sobre mim</a>
-                        
-                        
-                        
-                  <a class="nav-item nav-link"   id="about-menu" style="color: rgb(238, 94, 10);" href="#" >Sobre a empresa</a>
-                  
-                 
-                  
-                  <a class="nav-item nav-link "    id="services-menu"  style="color: rgb(219, 207, 32)" href="#">Ambiente e procedimentos</a>
-                
-                  
-                
-                
-          
-                  
-                  <a class="nav-item nav-link "   style="font-size: 18px; color: rgb(90, 160, 90)" href="login.html">Login </a>
-            </div>
-                
 
-                
-            </nav>
-        </div>
-        </header>
-
+  <?php
+include "menu.php";
+  ?>
       
     <div id="login">
       <div class="container" style="padding-bottom: 10%; justify-content: center;">
@@ -89,8 +58,7 @@ require_once "../classes/procedimentosFaciais.php";
     <?php
         if (isset($_GET["id_proc"]) && !empty($_GET["id_proc"])){
 
-          echo "encontrado";
-
+         
           $c = new conexao();
 
           $conexao = $c->conectar();
@@ -147,9 +115,8 @@ require_once "../classes/procedimentosFaciais.php";
               </div>
 
 
-          <div class="form-group">
-              <a style="margin-left: 11%; padding-top: 10%; color: black;" href="cadastrarUsuario.php">Cadastrar</a>
-              <a href="ambiente.php">voltar</a>
+          <div class="form-group" style="margin-left: 12%; ">
+               <a style="color: black;" href="ambiente.php">voltar</a>
             
             </div>
             </form>
